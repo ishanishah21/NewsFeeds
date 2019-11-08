@@ -20,6 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
+
     private static Retrofit retrofit = null;
     private static Context mContext;
     private static OkHttpClient okHttpClient;
