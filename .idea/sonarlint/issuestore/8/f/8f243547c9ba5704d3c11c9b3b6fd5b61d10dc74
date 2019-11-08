@@ -1,0 +1,16 @@
+
+ysquid:S1450"[Remove the "apiInterface" field and declare it as a local variable in the relevant methods.(ï¹ë›8Õø‹›°-
+Ÿsquid:S1186?"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8îëˆ›°-
+¥squid:S1186¦"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ÜÒÄøÿÿÿÿ8˜¢¯¦°-
+Ÿsquid:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8˜¢¯¦°-
+tsquid:S1450"VRemove the "builder" field and declare it as a local variable in the relevant methods.(Ü±Ëâ8Õø‹›°-
+Ÿsquid:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8ïù”Ÿ°-
+Ÿsquid:S1186o"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8ïù”Ÿ°-
+ squid:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8˜¢¯¦°-
+Fsquid:S1148u"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8˜¢¯¦°-
+¤squid:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ÜÒÄøÿÿÿÿ8ïù”Ÿ°-
+ squid:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8˜¢¯¦°-
+Fsquid:S1148D"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8»ç°ž°-
+¥squid:S1186Ž"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ÜÒÄøÿÿÿÿ8˜¢¯¦°-
+Qsquid:S1068".Remove this unused "disposable" private field.(ã…Ý·þÿÿÿÿ8Ù€ˆŸ°-
+ squid:S1186œ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8˜¢¯¦°-

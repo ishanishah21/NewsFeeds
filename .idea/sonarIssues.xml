@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/sample/myapplication/ExampleInstrumentedTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/sample/myapplication/FeedDataUnitTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/sample/myapplication/MainActivityIntrumentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/db/FeedDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/db/dao/FeedDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/model/FeedData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/model/FeedWrapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/network/ApiClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/network/ApiInterface.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/repository/FeedRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/repository/OnResponse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/ui/FeedAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/ui/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/sample/myapplication/viewmodel/FeedViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_feed.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/sample/myapplication/FeedDataUnitTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/java/com/sanketshah/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/java/com/sanketshah/ui/fragments/NewsFeedFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/java/com/sanketshah/utils/AppLoader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/java/com/sanketshah/utils/ApppLoaderView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/java/com/sanketshah/viewmodel/NewsFeedViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/res/layout/dialog_loader.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/res/navigation/default_nav.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Sanket/Sample Projects/app/src/main/res/values/colors.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/a-list_CR/app/src/main/java/com/delrentals/a_list/alist_detail/datamodel/AlistDetailsDataModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/a-list_CR/app/src/main/java/com/delrentals/a_list/apputils/AppEnum.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/a-list_CR/app/src/main/java/com/delrentals/a_list/filter/adapter/FilterCustomSpinnerAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/a-list_CR/app/src/main/java/com/delrentals/a_list/login/datamodel/data/Data.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
