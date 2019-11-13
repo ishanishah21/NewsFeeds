@@ -1,7 +1,7 @@
 # NewsFeeds
 
 ## An Application which demonstrate how MVVM can be used with Android Components
-<a href="https://ibb.co/BL1TCL6"><img src="https://i.ibb.co/WnTB2nz/mvv-room.png" alt="mvv-room" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>photo uploader</a><br />
+<a href="https://ibb.co/BL1TCL6"><img src="https://i.ibb.co/WnTB2nz/mvv-room.png" alt="mvv-room" border="0">
 1. Room Database For Caching
 2. Repository With RxJava to Decide Datasource [Fetch from database or fetch from server]
 3. ViewModel which process the data received from Repository
