@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <domain-config>
+        <domanin android:usesCleartextTraffic="true">*.mockable.io</domanin>
+    </domain-config>
+</network-security-config><!--
+    <network-security-config>
+        <domain-config >
+            <domain includeSubdomains="true">192.168.109.137</domain>
+            <domain includeSubdomains="true">digirx.savysoft.co.in</domain>
+            <trust-anchors>
+                <certificates src="@raw/certificate_file_digirx"/>
+            </trust-anchors>
+        </domain-config>
+    </network-security-config>-->
