@@ -8,3 +8,10 @@
 6. RxJava for reactive network calls and database operations.
 7. DAO classes are made to handle SQL queries.
 8. Navigation Component has been used for managing the Navigation of the Fragments/Screens.
+
+## Libraries
+1. Retrofit For Networking
+2. Rxjava
+3. Jetpack [Viewmodel, Livedata, Room Db]
+4. Glide for image loading
+5. Roboelectric for Unit testing.
