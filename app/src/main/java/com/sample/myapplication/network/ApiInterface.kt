@@ -9,5 +9,5 @@ import retrofit2.http.GET
 
 interface ApiInterface {
     @GET("facts")
-    val facts: Observable<FeedWrapper>
+    fun facts(): Observable<FeedWrapper>
 }

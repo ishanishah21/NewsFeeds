@@ -14,7 +14,7 @@ interface FeedDao {
     val data: List<FeedData>
 
     @get:Query("SELECT COUNT(*) FROM feed_data")
-    val recordCounts: Int
+    val recordCounts: Integer
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertData(feedData: List<FeedData>): List<Long>

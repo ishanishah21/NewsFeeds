@@ -36,9 +36,9 @@ object NetworkUtil {
         val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
         var wifiName = wifiManager.getConnectionInfo().getSSID()
         if (wifiName != null) {
-            if (!wifiName!!.contains("unknown ssid") && wifiName!!.length() > 2) {
+            if (!wifiName!!.contains("unknown ssid") && wifiName!!.length > 2) {
                 if (wifiName!!.startsWith("\"") && wifiName!!.endsWith("\""))
-                    wifiName = wifiName!!.subSequence(1, wifiName!!.length() - 1).toString()
+                    wifiName = wifiName!!.subSequence(1, wifiName!!.length- 1).toString()
                 return wifiName
             } else {
                 return ""

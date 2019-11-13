@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.room.Room
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.sample.myapplication.Application
 
 import com.sample.myapplication.R
 import com.sample.myapplication.databinding.ActivityMainBinding
@@ -22,25 +23,25 @@ class MainActivity : AppCompatActivity() {
     private var feedViewModel: FeedViewModel? = null
     private var feedAdapter: FeedAdapter? = null
 
-    @Override
-    protected fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         init()
         feedViewModel!!.getFacts()
     }
 
+
     private fun init() {
         feedViewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
         feedViewModel!!.setmContext(this@MainActivity)
-        feedViewModel!!.setFeedDatabase(getFeedDb(this))
+        feedViewModel!!.setFeedDatabase(getFeedDb(this)!!)
         feedAdapter = FeedAdapter()
 
         activityMainBinding!!.rvFeeds.setAdapter(feedAdapter)
         setupActionables()
 
-        feedViewModel!!.getFeedWrapperMutableLiveData().observe(this, object : Observer<List<FeedData>>() {
-            @Override
+        feedViewModel!!.getFeedWrapperMutableLiveData().observe(this, object : Observer<List<FeedData>> {
+            override
             fun onChanged(feedData: List<FeedData>) {
                 if (!feedData.isEmpty()) {
                     if (activityMainBinding!!.refreshFeeds.isRefreshing()) {
@@ -51,11 +52,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        feedViewModel!!.getFeedTitle().observe(this, object : Observer<String>() {
-            @Override
+        feedViewModel!!.feedTitle.observe(this, object : Observer<String> {
+            override
             fun onChanged(s: String) {
                 if (getSupportActionBar() != null) {
-                    getSupportActionBar().setTitle(s)
+                    getSupportActionBar()!!.setTitle(s)
                 }
             }
         })
@@ -63,8 +64,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupActionables() {
-        activityMainBinding!!.refreshFeeds.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener() {
-            @Override
+        activityMainBinding!!.refreshFeeds.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
+            override
             fun onRefresh() {
                 //feedViewModel.getFacts(MainActivity.this);
                 feedViewModel!!.removeAllOldFeeds()
@@ -75,19 +76,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @Override
+    override
     fun onBackPressed() {
         super.onBackPressed()
 
     }
 
-    companion object {
-        private var feedDatabase: FeedDatabase? = null
-
-        fun getFeedDb(context: Context): FeedDatabase? {
-            if (feedDatabase == null)
-                feedDatabase = Room.databaseBuilder(context, FeedDatabase::class.java, "FeedDb.db").build()
-            return feedDatabase
-        }
+    fun getFeedDb(context: Context): FeedDatabase {
+        return (this@MainActivity.application as Application).feedDatabase!!
     }
+
+    /*  companion object {
+          private var feedDatabase: FeedDatabase? = null
+
+          fun getFeedDb(context: Context): FeedDatabase? {
+              if (feedDatabase == null)
+                  feedDatabase = Room.databaseBuilder(context, FeedDatabase::class.java, "FeedDb.db").build()
+              return feedDatabase
+          }
+      }*/
 }

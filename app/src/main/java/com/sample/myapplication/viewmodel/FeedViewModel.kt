@@ -13,26 +13,26 @@ import com.sample.myapplication.repository.FeedRepository
 import com.sample.myapplication.repository.OnResponse
 
 class FeedViewModel : ViewModel() {
-    private var feedWrapperMutableLiveData: MutableLiveData<List<FeedData>>? = MutableLiveData()
+    private var feedWrapperMutableLiveData: MutableLiveData<List<FeedData>> = MutableLiveData()
     val feedTitle: MutableLiveData<String> = MutableLiveData()
-    private val cachedFeedCounts = MutableLiveData()
+    private val cachedFeedCounts = MutableLiveData<Integer>()
     private var feedRepository: FeedRepository? = null
     private var mContext: Context? = null
 
-    internal var onResponse: OnResponse = object : OnResponse() {
+    internal var onResponse: OnResponse = object : OnResponse {
 
 
-        @Override
+        override
         fun onRowsUpdated(feedData: List<FeedData>) {
             feedWrapperMutableLiveData!!.postValue(feedData)
         }
 
-        @Override
+        override
         fun onTitleUpdated(title: String) {
             feedTitle.postValue(title)
         }
 
-        @Override
+        override
         fun onFailure(msg: String) {
             Log.e("Network Failure", "" + msg)
         }
@@ -55,11 +55,11 @@ class FeedViewModel : ViewModel() {
     fun getFacts() {
         feedRepository!!.getDatabaseRecordCount(cachedFeedCounts)
 
-        cachedFeedCounts.observeForever(object : Observer<Integer>() {
-            @Override
+        cachedFeedCounts.observeForever(object : Observer<Integer> {
+            override
             fun onChanged(integer: Integer) {
                 if (integer <= 0) {
-                    feedRepository!!.getDataFromNetwork(mContext, onResponse)
+                    feedRepository!!.getDataFromNetwork(mContext!!, onResponse)
                 } else {
                     feedRepository!!.fetchFeedsFromCache(onResponse)
                 }
@@ -69,7 +69,7 @@ class FeedViewModel : ViewModel() {
     }
 
     fun removeAllOldFeeds() {
-        feedRepository!!.deleteAllFeeds(mContext, onResponse)
+        feedRepository!!.deleteAllFeeds(mContext!!, onResponse)
     }
 
 }

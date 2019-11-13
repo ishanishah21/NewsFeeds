@@ -1,6 +1,7 @@
 package com.sample.myapplication.network
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 
 import com.google.gson.Gson
@@ -18,6 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+@SuppressLint("StaticFieldLeak")
 object ApiClient {
 
 
@@ -37,7 +39,7 @@ object ApiClient {
                 .client(getOkHttpClient())
                 .build()
 
-        if (NetworkUtil.getConnectionStatus(mContext) === NetworkUtil.NOT_CONNECTED) {
+        if (NetworkUtil.getConnectionStatus(mContext!!) == NetworkUtil.NOT_CONNECTED) {
             throw NoConnectionException(con.getResources().getString(R.string.no_iternet))
         }
 
@@ -74,7 +76,7 @@ object ApiClient {
                 .client(getOkHttpClient())
                 .build()
 
-        if (NetworkUtil.getConnectionStatus(mContext) === NetworkUtil.NOT_CONNECTED) {
+        if (NetworkUtil.getConnectionStatus(mContext!!) == NetworkUtil.NOT_CONNECTED) {
             throw NoConnectionException(con.getResources().getString(R.string.no_iternet))
         }
         return retrofit
@@ -102,7 +104,7 @@ object ApiClient {
         }
         retrofit = builder.build()
 
-        if (NetworkUtil.getConnectionStatus(mContext) === NetworkUtil.NOT_CONNECTED) {
+        if (NetworkUtil.getConnectionStatus(mContext!!) == NetworkUtil.NOT_CONNECTED) {
             throw NoConnectionException(mContext!!.getString(R.string.no_iternet))
         }
 

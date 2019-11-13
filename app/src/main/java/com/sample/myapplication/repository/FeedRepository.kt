@@ -31,59 +31,58 @@ class FeedRepository(private val feedDatabase: FeedDatabase) {
         try {
             builder = ApiClient.getClient(context)
             apiInterface = builder!!.create(ApiInterface::class.java)
-            val newsFeedWrapperObservable = apiInterface!!.getFacts()
+            val newsFeedWrapperObservable = apiInterface!!.facts()
             newsFeedWrapperObservable.subscribeOn(Schedulers.newThread())
-                    .observeOn(AndroidSchedulers.mainThread()).subscribe(object : Observer<FeedWrapper>() {
-                        @Override
-                        fun onSubscribe(d: Disposable) {
+                    .observeOn(AndroidSchedulers.mainThread()).subscribe(object : Observer<FeedWrapper> {
+
+                        override fun onSubscribe(d: Disposable) {
                             disposable = d
                         }
 
-                        @Override
-                        fun onNext(newsFeedWrapper: FeedWrapper?) {
+
+                        override fun onNext(newsFeedWrapper: FeedWrapper) {
                             if (newsFeedWrapper != null) {
-                                insertFeeds(newsFeedWrapper!!.getRows(), onResponse)
-                                onResponse.onTitleUpdated(newsFeedWrapper!!.getTitle())
+                                insertFeeds(newsFeedWrapper!!.rows!!, onResponse)
+                                onResponse.onTitleUpdated(newsFeedWrapper!!.title!!)
                             }
                         }
 
-                        @Override
-                        fun onError(e: Throwable) {
-                            onResponse.onFailure(e.getMessage())
+
+                        override fun onError(e: Throwable) {
+                            onResponse.onFailure(e.message!!)
                         }
 
-                        @Override
-                        fun onComplete() {
+                        override fun onComplete() {
 
                         }
                     })
         } catch (e: NoConnectionException) {
             e.printStackTrace()
-            onResponse.onFailure(e.getMessage())
+            onResponse.onFailure(e.message!!)
         }
 
     }
 
     private fun insertFeeds(feedData: List<FeedData>, onResponse: OnResponse) {
-        Completable.fromAction(object : Action() {
-            @Override
+        Completable.fromAction(object : Action {
+
             @Throws(Exception::class)
-            fun run() {
+            override fun run() {
                 val ids = feedDatabase.feedDataDao().insertData(feedData)
                 Log.e("::", ":$ids")
             }
-        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver() {
-            @Override
+        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver {
+            override
             fun onSubscribe(d: Disposable) {
 
             }
 
-            @Override
+            override
             fun onComplete() {
                 fetchFeedsFromCache(onResponse)
             }
 
-            @Override
+            override
             fun onError(e: Throwable) {
 
             }
@@ -91,24 +90,24 @@ class FeedRepository(private val feedDatabase: FeedDatabase) {
     }
 
     fun fetchFeedsFromCache(onResponse: OnResponse) {
-        Completable.fromAction(object : Action() {
-            @Override
+        Completable.fromAction(object : Action {
+            override
             @Throws(Exception::class)
             fun run() {
-                onResponse.onRowsUpdated(feedDatabase.feedDataDao().getData())
+                onResponse.onRowsUpdated(feedDatabase.feedDataDao().data)
             }
-        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver() {
-            @Override
+        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver {
+            override
             fun onSubscribe(d: Disposable) {
 
             }
 
-            @Override
+            override
             fun onComplete() {
 
             }
 
-            @Override
+            override
             fun onError(e: Throwable) {
                 e.printStackTrace()
             }
@@ -118,24 +117,24 @@ class FeedRepository(private val feedDatabase: FeedDatabase) {
     }
 
     fun getDatabaseRecordCount(counts: MutableLiveData<Integer>) {
-        Completable.fromAction(object : Action() {
-            @Override
+        Completable.fromAction(object : Action {
+            override
             @Throws(Exception::class)
             fun run() {
-                counts.postValue(feedDatabase.feedDataDao().getRecordCounts())
+                counts.postValue(feedDatabase.feedDataDao().recordCounts!!)
             }
-        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver() {
-            @Override
+        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver {
+            override
             fun onSubscribe(d: Disposable) {
 
             }
 
-            @Override
+            override
             fun onComplete() {
 
             }
 
-            @Override
+            override
             fun onError(e: Throwable) {
 
             }
@@ -143,24 +142,24 @@ class FeedRepository(private val feedDatabase: FeedDatabase) {
     }
 
     fun deleteAllFeeds(mContext: Context, onResponse: OnResponse) {
-        Completable.fromAction(object : Action() {
-            @Override
+        Completable.fromAction(object : Action {
+            override
             @Throws(Exception::class)
             fun run() {
                 feedDatabase.feedDataDao().deleteAllFeeds()
             }
-        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver() {
-            @Override
+        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(object : CompletableObserver {
+            override
             fun onSubscribe(d: Disposable) {
 
             }
 
-            @Override
+            override
             fun onComplete() {
                 getDataFromNetwork(mContext, onResponse)
             }
 
-            @Override
+            override
             fun onError(e: Throwable) {
 
             }
